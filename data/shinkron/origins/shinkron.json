@@ -1,0 +1,12 @@
+{
+    "name": "Shinkron",
+    "description": "From an intelligent bruiser to a miniscule entity capable of weaving around many obstacles, a Shinkrons main strength is creatively inventing brilliant tactics for every possible situation. They need to be aware of smart foes that could manipulate their own weaknesses.",
+    "icon": {
+        "item": "minecraft:warped_button"
+    },
+    "impact": 3,
+    "order": 0,
+    "powers": [
+        "shinkron:size_change"
+    ]
+}
