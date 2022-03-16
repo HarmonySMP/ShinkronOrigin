@@ -1,0 +1,157 @@
+{
+    "type": "origins:multiple",
+    "name": "Size Shift",
+    "description": "You are able to change in 4 different sizes, each form has separate abilities and strengths allowing the user to be creative with their gameplay and tactics.",
+    "badges":[
+        {
+            "sprite": "origins:textures/gui/badge/active.png",
+            "text": "Press your Primary Key to Grow, and your Secondary Button to shrink in Size."
+        }
+    ],
+    "size_resource":{
+        "type": "origins:resource",
+        "max": 3,
+        "min": 0,
+        "start_value": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "shrink":{
+        "type":"origins:active_self",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_size_resource",
+            "change": -1
+        },
+        "cooldown": 100,
+        "hud_render": {
+            "should_render": false
+        },
+        "key": {
+            "key": "key.origins.secondary_active"
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_size_resource",
+            "comparison": "!=",
+            "compare_to": 0
+        }
+    },
+    "grow":{
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_size_resource",
+            "change": 1
+        },
+        "cooldown": 100,
+        "hud_render":{
+            "should_render": false
+        },
+        "key": {
+            "key": "key.origins.primary_active"
+        },
+        "condition": {
+            "type": "origins:resource",
+            "comparison": "<",
+            "compare_to": 2
+        }
+    },
+    "grow_giant":{
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_size_resource",
+            "change": 1
+        },
+        "cooldown": 400,
+        "hud_render":{
+            "should_render": false
+        },
+        "key": {
+            "key": "key.origins.primary_active"
+        },
+        "condition": {
+            "type": "origins:resource",
+            "comparison": "==",
+            "compare_to": 2
+        }
+    },
+    "shrink_giant": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_size_resource",
+            "change": -1
+        },
+        "cooldown": 400,
+        "hud_render":{
+            "should_render": false
+        },
+        "key": {
+            "key": "key.origins.primary_active"
+        },
+        "condition": {
+            "type": "origins:resource",
+            "comparison": "==",
+            "compare_to": 3
+        }
+    },
+    "small":{
+        "type": "origins:action_over_time",
+        "rising_action": {
+            "type": "origins:execute_command",
+            "command": "function shinkron:small",
+            "permission_level": 4
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_size_resource",
+            "comparison": "==",
+            "compare_to": 0
+        }
+    },
+    "base": {
+        "type": "origins:action_over_time",
+        "rising_action": {
+            "type": "origins:execute_command",
+            "command": "function shinkron:base",
+            "permission_level": 4
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_size_resource",
+            "comparison": "==",
+            "compare_to": 1
+        }
+    },
+    "big":{
+        "type": "origins:action_over_time",
+        "rising_action": {
+            "type": "origins:execute_command",
+            "command": "function shinkron:big",
+            "permission_level": 4
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_size_resource",
+            "comparison": "==",
+            "compare_to": 2
+        }
+    },
+    "giant":{
+        "type": "origins:action_over_time",
+        "rising_action": {
+            "type": "origins:execute_command",
+            "command": "function shinkron:base",
+            "permission_level": 4
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_size_resource",
+            "comparison": "==",
+            "compare_to": 3
+        }
+    }
+}
