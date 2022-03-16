@@ -1,0 +1,16 @@
+{
+  "name": "High Jump",
+  "description": "Whilst shrunk, Shinkrons are capable of leaping high, they will have a 6 second cooldown after leaping.",
+  "type": "origins:launch",
+  "cooldown": 125,
+  "hud_render": {
+    "sprite_location": "origins:textures/gui/resource_bar.png",
+    "bar_index": 4
+  },
+  "sound": "minecraft:entity.parrot.fly",
+  "speed": 1.6,
+  "key": {
+    "key": "key.origins.primary_active",
+    "continuous": true
+  }
+}
